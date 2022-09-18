@@ -11,7 +11,7 @@ from sys import argv
 from typing import Optional
 from telegram import __version__ as peler
 from platform import python_version as memek
-from PrimeMega import (
+from miku robot import 
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
@@ -35,9 +35,9 @@ from PrimeMega import (
 
 # needed to dynamically load modules
 # NOTE: Module order is not guaranteed, specify that in the config file!
-from PrimeMega.modules import ALL_MODULES
-from PrimeMega.modules.helper_funcs.chat_status import is_user_admin
-from PrimeMega.modules.helper_funcs.misc import paginate_modules
+from miku robot.modules import ALL_MODULES
+from miku robot.modules.helper_funcs.chat_status import is_user_admin
+from miku robot.modules.helper_funcs.misc import paginate_modules
 from telegram import InlineKeyboardButton, InlineKeyboardMarkup, ParseMode, Update
 from telegram.error import (
     BadRequest,
@@ -84,7 +84,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-*Hello {} !*
+*Hello 🔥 {} !*
 ────────────────────────
 I'm a powerful group management bot built to help you manage your group!
 ────────────────────
@@ -109,8 +109,9 @@ buttons = [
         ),
     ],
 ]
+       Inlinekeyboardbutton(text="support", url=f"https://t.me/gabut_mutualan"
 
-
+                            
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
@@ -374,7 +375,7 @@ def prime_about_callback(update, context):
     query = update.callback_query
     if query.data == "prime_":
         query.message.edit_text(
-            text=f"๏ I'm *{BOT_NAME}*, a powerful group management bot built to help you manage your group easily."
+            text=f"🔥 I'm *{BOT_NAME}*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
@@ -404,7 +405,7 @@ def prime_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "prime_back":
+    elif query.data == "prime_black":
         first_name = update.effective_user.first_name
         uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
@@ -756,7 +757,7 @@ def donate(update: Update, context: CallbackContext):
 
         if OWNER_ID != 1606221784:
             update.effective_message.reply_text(
-                "I'm free for everyone ❤️ If you wanna make me smile, just join"
+                "I'm free for everyone 🔥 If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
                 parse_mode=ParseMode.MARKDOWN,
             )
@@ -803,7 +804,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                "👋 Hi friends, I'm alive.",
+                "🔥 Hi friends, I'm active 🔥.",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
